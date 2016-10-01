@@ -1,0 +1,5 @@
+{{ partial "header.html" . }}
+{{ partial "open_content.html" . }}
+  {{ .Render "content" }}
+{{ partial "close_content.html" . }}
+{{ partial "footer.html" . }}

@@ -1,0 +1,10 @@
+{{ partial "header.html" . }}
+{{ partial "open_content.html" . }}
+  <div>
+    {{ range .Data.Pages }}
+      {{ .Render "content"}}
+      <hr>
+    {{ end }}
+  </div>
+{{ partial "close_content.html" . }}
+{{ partial "footer.html" . }}

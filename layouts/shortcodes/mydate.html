@@ -1,0 +1,6 @@
+{{ $date := .Get 0 }}
+{{ if eq .Site.locale "en-us"}}
+  {{ $date.Format "January 1, 2006" }}
+{{ else }}
+  {{ $date.Day }} {{ index $.Site.Data.Translations.meses (printf "%d" .Date.Month) }} {{ $date.Year }}</p>
+{{ end }}

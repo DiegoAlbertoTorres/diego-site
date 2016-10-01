@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ .Title }}</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<div class="nav">
+    <a href="{{ .Site.BaseURL }}" class="nav-header">Diego Alberto Torres Quintanilla</a>
+    <div class="nav-pills">
+      {{- $menuLen := add (len .Site.Menus.main) -1 }}
+      {{- range $idx, $el := .Site.Menus.main -}}
+        <div class="nav-pill">
+          <a class="nav-link" href="{{ .URL }}">{{- printf "%s" .Name -}}</a>
+        </div>
+        {{- if lt $idx $menuLen -}}
+          <span class="nav-pill">|</span>
+        {{- end -}}
+      {{- end -}}
+    </div>
+	</div>
