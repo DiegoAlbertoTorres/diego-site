@@ -1,0 +1,20 @@
+baseurl = "http://replace-this-with-your-hugo-site.com/"
+title = "Diego Alberto Torres Quintanilla"
+shortTitle = "Diego Torres"
+languageCode = "en-us"
+contentdir = "content/en"
+publishdir = "public/en"
+paginate = 4
+
+[params]
+  subdomain = "en"
+  locale = "en-US"
+
+[[menu.main]]
+  name = "About"
+  identifier = "about"
+  url = "/"
+[[menu.main]]
+  name = "Texts"
+  identifier = "blog"
+  url = "/blog/"
