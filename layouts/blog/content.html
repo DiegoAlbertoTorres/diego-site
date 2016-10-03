@@ -5,10 +5,10 @@
 throws a syntax error when using custom shortcodes here -->
 {{ if eq .Site.Params.locale "en-US"}}
   <p class="blog-date">
-    {{ .Date.Format "January 1, 2006" }}
+    {{ .Date.Format "January 2, 2006" }}
     <br>
     ({{ ( index $.Site.Data.translations $.Site.Params.locale ).lastMod }}:
-    {{ .Lastmod.Format "January 1, 2006" }})
+    {{ .Lastmod.Format "January 2, 2006" }})
   </p>
 {{ else }}
   <p class="blog-date">
