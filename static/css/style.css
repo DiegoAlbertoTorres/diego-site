@@ -76,13 +76,12 @@ body {
 
 .profile-picture {
   display: inline;
-  float: left;
+  float: right;
   width: 25%;
+  margin: 0vw 3vw 0vw 2vw;
 }
 
 .profile-picture figure {
-  float: left;
-  margin: 0vw 3vw 1vw 0vw;
   display: table-cell;
 }
 
