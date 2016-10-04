@@ -13,15 +13,19 @@
       <span id="nav-header-short">Diego Torres</span>
     </a>
     <div class="nav-pills">
-      {{- $menuLen := add (len .Site.Menus.main) -1 }}
       {{- range $idx, $el := .Site.Menus.main -}}
         <div class="nav-pill">
           <a class="nav-link" href="{{ .URL }}">{{- printf "%s" .Name -}}</a>
         </div>
-        {{- if lt $idx $menuLen -}}
-          <span class="nav-pill">|</span>
-        {{- end -}}
+        <span class="nav-pill">|</span>
       {{- end -}}
+      <div class="nav-pill">
+        {{- if eq .Site.Params.locale "en-US" -}}
+          <a class="nav-link" href="http://es.{{- .Site.Params.masterURL -}}">Español</a>
+        {{- else -}}
+          <a class="nav-link" href="http://en.{{- .Site.Params.masterURL -}}">English</a>
+        {{- end -}}
+      </div>
     </div>
     <!-- An ugly HTML/CSS patch to make the parent nav div expand to the size of its children -->
     <div style="clear: both;"></div>

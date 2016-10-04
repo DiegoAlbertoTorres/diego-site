@@ -9,6 +9,7 @@ paginate = 4
 [params]
   subdomain = "en"
   locale = "en-US"
+  masterURL = "diegotorr.es"
 
 [[menu.main]]
   name = "About"

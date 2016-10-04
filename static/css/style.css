@@ -74,13 +74,13 @@ body {
   color: var(--secondary-color);
 }
 
-.cont {
+.profile-picture {
   display: inline;
   float: left;
-  width: 35%;
+  width: 25%;
 }
 
-.profile-picture {
+.profile-picture figure {
   float: left;
   margin: 0vw 3vw 1vw 0vw;
   display: table-cell;

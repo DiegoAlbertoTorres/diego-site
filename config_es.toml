@@ -8,6 +8,7 @@ publishdir = "public/es"
 [params]
   subdomain = "es"
   locale = "es-MX"
+  masterURL = "diegotorr.es"
 
 [[menu.main]]
   name = "Información"
