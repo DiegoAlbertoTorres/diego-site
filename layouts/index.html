@@ -1,11 +1,9 @@
 {{ partial "header.html" . }}
-<div class="col col-left"></div>
-<div class="content">
+{{ partial "open_content.html" . }}
   {{- range .Data.Pages -}}
       {{- if and (eq .RelPermalink "/index.html") (eq .Params.locale .Site.Params.locale) -}}
   			{{- .Content -}}
   		{{- end -}}
   {{ end }}
-</div>
-<div class="col col-right"></div>
+{{ partial "close_content.html" . }}
 {{ partial "footer.html" . }}

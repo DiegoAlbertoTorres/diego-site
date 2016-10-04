@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8"> 
+	<meta charset="UTF-8">
 	<title>{{ .Title }}</title>
   	<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js"></script>
 </head>
-<body>
+<body onresize="navHeaderAdjust()">
 	<div class="nav">
-    <a href="{{ .Site.BaseURL }}" class="nav-header">Diego Alberto Torres Quintanilla</a>
+    <a href="{{ .Site.BaseURL }}" id="nav-header">
+      <span id="nav-header-long">Diego Alberto Torres Quintanilla</span>
+      <span id="nav-header-short">Diego Torres</span>
+    </a>
     <div class="nav-pills">
       {{- $menuLen := add (len .Site.Menus.main) -1 }}
       {{- range $idx, $el := .Site.Menus.main -}}
@@ -19,4 +23,6 @@
         {{- end -}}
       {{- end -}}
     </div>
+    <!-- An ugly HTML/CSS patch to make the parent nav div expand to the size of its children -->
+    <div style="clear: both;"></div>
 	</div>

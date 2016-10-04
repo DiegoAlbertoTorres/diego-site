@@ -1,23 +1,27 @@
-<a class="blog-title" href="{{- .RelPermalink -}}">
-  <h1 class="blog-title">{{- .Title -}}</h1>
-</a>
-<!-- This should all be a one-line call to a shortcode, but for some reason, the hugo compiler
-throws a syntax error when using custom shortcodes here -->
-{{ if eq .Site.Params.locale "en-US"}}
-  <p class="blog-date">
-    {{ .Date.Format "January 2, 2006" }}
-    <br>
-    ({{ ( index $.Site.Data.translations $.Site.Params.locale ).lastMod }}:
-    {{ .Lastmod.Format "January 2, 2006" }})
-  </p>
-{{ else }}
-  <p class="blog-date">
-    {{ index $.Site.Data.translations.meses (printf "%d" .Date.Month) }} {{.Date.Day}}, {{ .Date.Year }}
-    <br>
-    ({{( index $.Site.Data.translations $.Site.Params.locale ).lastMod }}:
-    {{ index $.Site.Data.translations.meses (printf "%d" .Lastmod.Month) }} {{.Lastmod.Day}}, {{ .Lastmod.Year }})
-  </p>
-{{ end }}
+<div style="display: block;">
+  <a class="blog-title" href="{{- .RelPermalink -}}">
+    <h1 class="blog-title">{{- .Title -}}</h1>
+  </a>
+  <!-- This should all be a one-line call to a shortcode, but for some reason, the hugo compiler
+  throws a syntax error when using custom shortcodes here -->
+  {{ if eq .Site.Params.locale "en-US"}}
+    <p class="blog-date">
+      {{ .Date.Format "January 2, 2006" }}
+      <br>
+      ({{ ( index $.Site.Data.translations $.Site.Params.locale ).lastMod }}:
+      {{ .Lastmod.Format "January 2, 2006" }})
+    </p>
+  {{ else }}
+    <p class="blog-date">
+      {{ index $.Site.Data.translations.meses (printf "%d" .Date.Month) }} {{.Date.Day}}, {{ .Date.Year }}
+      <br>
+      ({{( index $.Site.Data.translations $.Site.Params.locale ).lastMod }}:
+      {{ index $.Site.Data.translations.meses (printf "%d" .Lastmod.Month) }} {{.Lastmod.Day}}, {{ .Lastmod.Year }})
+    </p>
+  {{ end }}
+<!-- Another clear div. Overflow: hidden does not work for this use case. -->
+<div style="clear: both;"></div>
+</div>
 <div class="blog-content">
 {{- .Content -}}
 </div>

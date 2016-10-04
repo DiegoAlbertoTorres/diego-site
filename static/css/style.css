@@ -19,27 +19,31 @@ body {
   margin: 0;
   top: 0px;
   left: 0px;
-  height: 6vh;
   color: var(--primary-color);
   background-color: var(--secondary-color);
   margin-bottom: 2vh;
+  padding: 0.5vh 0vh 0.5vh 0vh;
 }
-.nav-header, .nav-header:visited {
+#nav-header, #nav-header:visited {
   margin: 0;
   margin-left: 15%;
   display: inline-block;
   text-decoration: none;
   color: white;
   font-size: 4vh;
-  padding-top: 0.6vh;
+  overflow: auto;
+}
+#nav-header-long {
+  position: absolute;
 }
 .nav-pills {
   height: 100%;
-  display: inline;
+  display: inline-block;
   float: right;
   margin-right: 15%;
   font-size: 3vh;
-  padding-top: 1.5vh;
+  padding-top: 1vh;
+  background-color: var(--secondary-color);
 }
 .nav-pill {
   display: inline;
@@ -70,9 +74,20 @@ body {
   color: var(--secondary-color);
 }
 
+.cont {
+  display: inline;
+  float: left;
+  width: 35%;
+}
+
 .profile-picture {
   float: left;
   margin: 0vw 3vw 1vw 0vw;
+  display: table-cell;
+}
+
+.profile-picture img {
+  width: 100%;
 }
 
 /* content */
@@ -109,9 +124,21 @@ body {
   font-size: 2.5vh;
 }
 .blog-content {
-  margin-top: 3vh;
+  margin-top: 2vh;
 }
 .blog-url {
   margin-left: 1vw;
   font-size: 2.5vh;
 }
+
+/*@media only screen and (max-width: 850px) {
+      .nav-header:after {
+        content: "Diego Torres";
+      }
+    }
+
+ @media only screen and (min-width: 851px) {
+      .nav-header:after {
+        content: "Diego Alberto Torres Quintanilla";
+      }
+    }*/
